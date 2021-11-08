@@ -1,26 +1,24 @@
 .footer {
-	background-color: grey;
+	background-color: $bkg-footer;
 	color: white;
 	display: flex;
 	flex-direction: column;
 	padding-left: 50px;
+	padding-top: 30px;
 	&__text {
-		font-size: 18px;
+		font-size: $font-size-footer;
 		font-family: "shrikhand";
 	}
 	&__list {
 		list-style: none;
-		font-family: "roboto";
-		font-size: $font-size-footer;
 		padding-inline-start: 0;
 	}
 	& li {
 		display: flex;
 		line-height: 200%;
 		align-items: center;
-		/*& .items {
-			position: absolute;
-			right: 10px;
-		}*/
+		& i {
+			width: 22px;
+		}
 	}
 }

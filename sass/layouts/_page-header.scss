@@ -1,0 +1,40 @@
+.page-header {
+	width: 100%;
+	height: 400px;
+	background-color: $bkg-clear-grey;
+	& img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		overflow: hidden;
+	}
+	&__title {
+		border-radius: 25px;
+		/*border-top-right-radius: 25px;*/
+		font-family: "shrikhand";
+		font-size: 25px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: auto 0;
+	}
+}
+.menu {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: center;
+	background-color: $bkg-clear-grey;
+	&__title {
+		border-bottom: 3px solid $color-ter;
+	}
+	&__item {
+		background-color: white;
+		width: 90%;
+		display: flex;
+
+		justify-content: center;
+	}
+}
