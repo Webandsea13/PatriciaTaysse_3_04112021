@@ -1,8 +1,27 @@
 .btn-pink {
 	color: white;
-	background: linear-gradient($color-prim, $color-sec);
+	background: linear-gradient(to left top, $color-prim, $color-sec);
 	border-style: none;
 	border-radius: 20px;
 	padding: 15px 20px;
-	margin: 20px;
+	margin: 20px 20px;
+	box-shadow: 5px 5px 5px $bkg-dark-grey;
+	position: relative;
+	z-index: 1;
+
+	&::after {
+		content: "";
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+		background-color: $color-sec;
+		transition: opacity 400ms;
+	}
+	&:hover {
+		box-shadow: 5px 5px 5px grey;
+
+		&::after {
+			opacity: 1;
+		}
+	}
 }

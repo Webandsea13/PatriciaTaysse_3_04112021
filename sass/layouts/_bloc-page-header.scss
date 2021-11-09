@@ -19,22 +19,3 @@
 		padding: auto 0;
 	}
 }
-.menu {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	flex: 1;
-	justify-content: center;
-	background-color: $bkg-clear-grey;
-	&__title {
-		border-bottom: 3px solid $color-ter;
-	}
-	&__item {
-		background-color: white;
-		width: 90%;
-		display: flex;
-
-		justify-content: center;
-	}
-}

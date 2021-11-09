@@ -5,6 +5,10 @@
 	flex-direction: column;
 	padding-left: 50px;
 	padding-top: 30px;
+	& a {
+		text-decoration: none;
+		color: white;
+	}
 	&__text {
 		font-size: $font-size-footer;
 		font-family: "shrikhand";

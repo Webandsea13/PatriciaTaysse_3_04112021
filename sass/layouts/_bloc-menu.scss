@@ -1,0 +1,65 @@
+.menu {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: center;
+	background-color: $bkg-clear-grey;
+	&__title {
+		border-bottom: 3px solid $color-ter;
+		width: 50px;
+	}
+	&__list {
+	}
+	&__list__item {
+		background-color: white;
+		width: 90%;
+		padding: 0;
+		margin: 20px auto;
+		border-radius: 15px;
+		display: flex;
+		justify-content: space-between;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		animation: appear 1800ms backwards;
+		& .text {
+			padding: 15px 0;
+		}
+		& .price {
+			padding: 15px 15px;
+			display: flex;
+			align-items: flex-end;
+		}
+		& i {
+			color: white;
+			width: 80px;
+			background-color: $color-ter;
+			text-align: center;
+			opacity: 0;
+		}
+		@for $n from 1 through 3 {
+			&--#{$n} {
+				animation-delay: 600ms * $n;
+			}
+		}
+
+		&:hover {
+			& i {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
