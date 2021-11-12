@@ -1,3 +1,8 @@
+.page-menu {
+	@include desktop {
+		display: flex;
+	}
+}
 .menu {
 	width: 100%;
 	display: flex;
@@ -20,17 +25,22 @@
 		border-radius: 15px;
 		display: flex;
 		justify-content: space-between;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
 		animation: appear 1800ms backwards;
+
 		& .text {
 			padding: 15px 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		& .moov {
+			display: flex;
 		}
 		& .price {
 			padding: 15px 15px;
 			display: flex;
 			align-items: flex-end;
+			transform: translateX (80px);
 		}
 		& i {
 			color: white;
@@ -38,6 +48,7 @@
 			background-color: $color-ter;
 			text-align: center;
 			opacity: 0;
+			transform: translateX(80px);
 		}
 		@for $n from 1 through 3 {
 			&--#{$n} {
@@ -46,8 +57,12 @@
 		}
 
 		&:hover {
+			& .price {
+				transform: translateX(0);
+			}
 			& i {
 				opacity: 1;
+				transform: translateX(0);
 			}
 		}
 	}
@@ -62,4 +77,7 @@
 		opacity: 1;
 		transform: translateY(0px);
 	}
+}
+.btn {
+	text-align: center;
 }

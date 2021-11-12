@@ -55,16 +55,28 @@
   height: 300px;
   object-fit: cover;
   overflow: hidden;
+  position: relative;
 }
 .page-header__title {
   border-radius: 25px;
-  /*border-top-right-radius: 25px;*/
+  border: 2px solid black;
   font-family: "shrikhand";
   font-size: 25px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: auto 0;
+  padding-top: 50px;
+  position: absolute;
+  top: 350px;
+  width: 100%;
+  z-index: 5;
+  max-width: 800px;
+}
+
+@media screen and (min-width: 1000px) {
+  .page-menu {
+    display: flex;
+  }
 }
 
 .menu {
@@ -88,18 +100,22 @@
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   animation: appear 1800ms backwards;
 }
 .menu__list__item .text {
   padding: 15px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__list__item .moov {
+  display: flex;
 }
 .menu__list__item .price {
   padding: 15px 15px;
   display: flex;
   align-items: flex-end;
+  transform: translateX 80px;
 }
 .menu__list__item i {
   color: white;
@@ -107,6 +123,7 @@
   background-color: #99e2d0;
   text-align: center;
   opacity: 0;
+  transform: translateX(80px);
 }
 .menu__list__item--1 {
   animation-delay: 600ms;
@@ -117,8 +134,12 @@
 .menu__list__item--3 {
   animation-delay: 1800ms;
 }
+.menu__list__item:hover .price {
+  transform: translateX(0);
+}
 .menu__list__item:hover i {
   opacity: 1;
+  transform: translateX(0);
 }
 
 @keyframes appear {
@@ -131,6 +152,10 @@
     transform: translateY(0px);
   }
 }
+.btn {
+  text-align: center;
+}
+
 body {
   font-family: "roboto", sans serif;
   box-sizing: border-box;
@@ -148,6 +173,14 @@ p {
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+  .main-index {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .explorer {
@@ -179,9 +212,21 @@ p {
   text-align: center;
   padding: 20px 0;
 }
+@media screen and (min-width: 1000px) {
+  .explorer {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
 
 .fonctionnement {
   margin: 30px 0;
+}
+@media screen and (min-width: 699px) and (max-width: 999px) {
+  .fonctionnement__list {
+    display: flex;
+    flex-direction: row;
+  }
 }
 .fonctionnement__bulle {
   display: flex;
@@ -214,6 +259,17 @@ p {
 .fonctionnement__bulle i {
   color: grey;
 }
+@media screen and (min-width: 699px) and (max-width: 999px) {
+  .fonctionnement__bulle {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .fonctionnement {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
 
 .restaurant {
   background-color: #f2f2f2;
@@ -236,6 +292,25 @@ p {
   border-radius: 25px;
   background-color: white;
   margin: 0 auto;
+  position: relative;
+}
+.restaurant__card span {
+  position: absolute;
+  color: green;
+  background-color: #99e2d0;
+  top: 8px;
+  right: 8px;
+  padding: 2px;
+}
+@media screen and (min-width: 699px) and (max-width: 999px) {
+  .restaurant__card {
+    min-width: 45%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__card {
+    min-width: 45%;
+  }
 }
 .restaurant__card__footer {
   display: flex;
@@ -246,6 +321,9 @@ p {
 .restaurant__card__footer .heart {
   margin-right: 15px;
 }
+.restaurant__card__footer .heart--pink {
+  color: #ff79da;
+}
 .restaurant img {
   width: 100%;
   height: 220px;
@@ -254,30 +332,41 @@ p {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
+@media screen and (min-width: 1000px) {
+  .restaurant {
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+}
 
-.btn-pink {
+.btn--pink {
   color: white;
   background: linear-gradient(to left top, #9356dc, #ff79da);
   border-style: none;
   border-radius: 20px;
   padding: 15px 20px;
-  margin: 20px 20px;
+  margin: 20px auto;
   box-shadow: 5px 5px 5px #d3d3d3;
   position: relative;
   z-index: 1;
 }
-.btn-pink::after {
+.btn--pink::after {
   content: "";
   position: absolute;
   opacity: 0;
   z-index: -1;
   background-color: #ff79da;
+  border-radius: 20px;
   transition: opacity 400ms;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-.btn-pink:hover {
+.btn--pink:hover {
   box-shadow: 5px 5px 5px grey;
 }
-.btn-pink:hover::after {
+.btn--pink:hover::after {
   opacity: 1;
 }
 

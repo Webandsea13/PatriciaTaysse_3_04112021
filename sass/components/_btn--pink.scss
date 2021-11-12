@@ -1,10 +1,10 @@
-.btn-pink {
+.btn--pink {
 	color: white;
 	background: linear-gradient(to left top, $color-prim, $color-sec);
 	border-style: none;
 	border-radius: 20px;
 	padding: 15px 20px;
-	margin: 20px 20px;
+	margin: 20px auto;
 	box-shadow: 5px 5px 5px $bkg-dark-grey;
 	position: relative;
 	z-index: 1;
@@ -15,7 +15,12 @@
 		opacity: 0;
 		z-index: -1;
 		background-color: $color-sec;
+		border-radius: 20px;
 		transition: opacity 400ms;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
 	}
 	&:hover {
 		box-shadow: 5px 5px 5px grey;
