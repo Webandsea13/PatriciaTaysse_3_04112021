@@ -11,17 +11,17 @@
 	}
 	&__title {
 		border-radius: 25px;
-		border: 2px solid black;
 		font-family: "shrikhand";
 		font-size: 25px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		padding-top: 50px;
+		padding: 25px 0;
 		position: absolute;
 		top: 350px;
 		width: 100%;
 		z-index: 5;
 		max-width: 800px;
+		background-color: $bkg-clear-grey;
 	}
 }

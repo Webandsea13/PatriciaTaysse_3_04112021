@@ -14,7 +14,12 @@
 		position: absolute;
 		opacity: 0;
 		z-index: -1;
-		background-color: $color-sec;
+		background: linear-gradient(
+			to left top,
+			lighten($color-prim, 7%),
+			lighten($color-sec, 7%)
+		);
+		/*background-color: $color-sec;*/
 		border-radius: 20px;
 		transition: opacity 400ms;
 		top: 0;

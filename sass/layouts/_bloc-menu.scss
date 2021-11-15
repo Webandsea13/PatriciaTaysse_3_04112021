@@ -14,17 +14,19 @@
 	&__title {
 		border-bottom: 3px solid $color-ter;
 		width: 50px;
+		margin-left: 20px;
 	}
 	&__list {
 	}
 	&__list__item {
 		background-color: white;
-		width: 90%;
+		/*width: 90%;*/
 		padding: 0;
-		margin: 20px auto;
+		margin: 20px 20px;
 		border-radius: 15px;
 		display: flex;
 		justify-content: space-between;
+		overflow: hidden;
 		animation: appear 1800ms backwards;
 
 		& .text {
@@ -32,37 +34,50 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			& h2,
+			& p {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 		& .moov {
 			display: flex;
-		}
-		& .price {
-			padding: 15px 15px;
-			display: flex;
-			align-items: flex-end;
-			transform: translateX (80px);
-		}
-		& i {
-			color: white;
-			width: 80px;
-			background-color: $color-ter;
-			text-align: center;
-			opacity: 0;
 			transform: translateX(80px);
+			transition: transform 500ms ease;
+			&__price {
+				padding: 15px 15px;
+				display: flex;
+				align-items: flex-end;
+			}
+			& i {
+				color: white;
+				width: 80px;
+				padding: 12px;
+				background-color: $color-ter;
+				text-align: center;
+				border-top-right-radius: 15px;
+				border-bottom-right-radius: 15px;
+				opacity: 0;
+			}
+			& .fas {
+				transform: rotate(-180deg);
+				transition: transform 500ms ease;
+			}
+			&:hover {
+				transform: translateX(0);
+
+				& i {
+					opacity: 1;
+				}
+				& .fas {
+					transform: rotate(0deg);
+				}
+			}
 		}
 		@for $n from 1 through 3 {
 			&--#{$n} {
 				animation-delay: 600ms * $n;
-			}
-		}
-
-		&:hover {
-			& .price {
-				transform: translateX(0);
-			}
-			& i {
-				opacity: 1;
-				transform: translateX(0);
 			}
 		}
 	}

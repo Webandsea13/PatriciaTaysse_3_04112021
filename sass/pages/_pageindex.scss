@@ -1,10 +1,14 @@
 h1,
 h2,
 h3,
+h4,
 p {
 	margin-bottom: 0;
 	margin-top: 0;
 	padding-left: 15px;
+}
+a {
+	text-decoration: none;
 }
 .main-index {
 	@include desktop {
@@ -56,15 +60,20 @@ p {
 	}
 	&__bulle {
 		display: flex;
-		width: 90%;
 		height: 60px;
 		border-radius: 20px;
-		box-shadow: 10px 5px 5px $bkg-dark-grey;
-		margin: 30px auto;
+		box-shadow: 10px 10px 10px $bkg-dark-grey;
+		margin: 30px 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: flex-start;
 		position: relative;
 		background-color: $bkg-clear-grey;
+		& i {
+			padding-left: 30px;
+			color: grey;
+		}
 		&:hover {
 			background-color: lighten($color: $color-prim, $amount: 30);
 			& i {
@@ -73,16 +82,15 @@ p {
 		}
 		& span {
 			background-color: $color-prim;
-			width: 18px;
-			height: 18px;
+			width: 22px;
+			height: 22px;
 			border-radius: 50%;
 			color: white;
 			text-align: center;
 			position: absolute;
 			left: -5px;
-		}
-		& i {
-			color: grey;
+			font-size: 12px;
+			padding-top: 6px;
 		}
 		@include tablette {
 			width: 30%;
@@ -97,33 +105,35 @@ p {
 
 .restaurant {
 	background-color: $bkg-clear-grey;
-	width: 100%;
-	padding: 30px 0;
+	/*width: 100%;*/
+	padding: 30px 30px;
 
 	&__list {
 		display: flex;
-		width: 90%;
+
 		flex-wrap: wrap;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 25px;
-		gap: 20px;
+		gap: 30px;
 	}
 	&__card {
 		flex: 1;
 		min-width: 90%;
 		height: 300px;
-		border-radius: 25px;
+		border-radius: 20px;
 		background-color: white;
 		margin: 0 auto;
 		position: relative;
+		box-shadow: 10px 10px 10px $bkg-dark-grey;
 		& span {
 			position: absolute;
 			color: green;
 			background-color: $color-ter;
-			top: 8px;
-			right: 8px;
-			padding: 2px;
+			top: 12px;
+			right: 12px;
+			padding: 5px;
+			border-radius: 5px;
 		}
 		@include tablette {
 			min-width: 45%;
@@ -136,11 +146,44 @@ p {
 			justify-content: space-between;
 			align-items: center;
 			padding-top: 5px;
-			& .heart {
+			& .anim {
 				margin-right: 15px;
-			}
-			& .heart--pink {
-				color: $color-sec;
+				position: relative;
+				& .heart {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+				}
+				& .heart--pink {
+					background: -webkit-linear-gradient(
+						$color-prim,
+						$color-sec
+					);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					z-index: -1;
+					opacity: 0;
+					transform: scale(0.1);
+					/*color: transparent;*/
+					transition: all 400ms ease;
+					transform-origin: 50% 100%;
+				}
+
+				&:hover {
+					& .heart--pink {
+						opacity: 1;
+						/*background: -webkit-linear-gradient(
+							$color-prim,
+							$color-sec
+						);
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;*/
+
+						transform: scale(1.03);
+					}
+				}
 			}
 		}
 	}
@@ -150,8 +193,8 @@ p {
 		height: 220px;
 		object-fit: cover;
 		overflow: hidden;
-		border-top-right-radius: 25px;
-		border-top-left-radius: 25px;
+		border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
 	}
 	@include desktop {
 		grid-column: 2;

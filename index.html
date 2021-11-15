@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 </head>
 <body>
+    <div class="loading">
+        <div class="loading__spinner"></div>
+    </div>
     <header class="header">
         <div class="header__icon">
             <i class="fas fa-arrow-left"></i>
@@ -38,9 +41,7 @@
                 <h2>Réservez le menu qui vous convient</h2>
                 <p>Découvrez des restaurants d'exception,</br>sélectionnés par nos soins.</p>
             </div>
-            <a href="#restaurant" title="">
-                <button class="btn--pink ">Explorer nos restaurants</button>
-            </a>
+            <a href="#restaurant" title="" class="btn--pink ">Explorer nos restaurants</a>
 
         </section>
 
@@ -50,17 +51,17 @@
                 <div class="fonctionnement__bulle">
                     <span>1</span>
                     <i class="fas fa-mobile-alt"></i>
-                    Choisissez un restaurant
+                    <h4>Choisissez un restaurant</h4>
                 </div>
                 <div class="fonctionnement__bulle">
                     <span>2</span>
                     <i class="fas fa-list-ul"></i>
-                    Composez votre menu
+                    <h4>Composez votre menu</h4>
                 </div>
                 <div class="fonctionnement__bulle">
                     <span>3</span>
                     <i class="fas fa-store"></i>
-                    Dégustez au restaurant
+                    <h4>Dégustez au restaurant</h4>
                 </div>
             </div>
 
@@ -74,20 +75,25 @@
                     <a href="palette.html">
                         
                         <img src="./public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant La palette du goût"/>
-                    </a>
-                    <div class="restaurant__card__footer">
-                        <div>
-                            <h3>La palette du goût</h3>
-                            <p>Ménilmontant</p>
-                        </div>
-                        <div class="heart">
-                            <i class="far fa-heart fa-2x"></i>
-                        </div>
-                        <div class="heart--pink">
-                            <i class="fas fa-heart fa-2x"></i>
-                        </div>
+                   
+                        <div class="restaurant__card__footer">
+                            <div>
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                            <div class="anim">
+                                <div class="heart">
+                                    <i class="far fa-heart fa-2x "></i>
+                                </div>
+                                <div class="heart--pink">
+                                    <i class="fas fa-heart fa-2x heart--pink"></i>
+                                </div>
+                                     
+                                
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                     
                 </div>
                 <div class="restaurant__card">
@@ -138,17 +144,17 @@
         <ul class="footer__list">
             <li>
                 <i class="fas fa-utensils"></i>
-                <div class="items">Proposer un restaurant</div>
+                <a href="" class="items">Proposer un restaurant</a>
             </li>
             <li>
                 <i class="fas fa-hands-helping"></i>
-                <div class="items">Devenir partenaire</div>
+                <a href="" class="items">Devenir partenaire</a>
             </li>
             <li>
-                <div class="items">Mentions légales</div>
-            </li>
+                <a href="" class="items">Mentions légales</a>
+          </li>
             <li>
-                <div class="items">Contact</div>
+                <a href="" class="items">Contact</a>
             </li>
         </ul>
     </footer>
