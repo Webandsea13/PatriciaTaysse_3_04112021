@@ -43,12 +43,16 @@
 		}
 		& .moov {
 			display: flex;
+
 			transform: translateX(80px);
-			transition: transform 500ms ease;
+			transition: all 500ms ease;
 			&__price {
 				padding: 15px 15px;
 				display: flex;
 				align-items: flex-end;
+				& p {
+					white-space: nowrap;
+				}
 			}
 			& i {
 				color: white;
@@ -59,22 +63,28 @@
 				border-top-right-radius: 15px;
 				border-bottom-right-radius: 15px;
 				opacity: 0;
-			}
-			& .fas {
 				transform: rotate(-180deg);
-				transition: transform 500ms ease;
+				transition: all 500ms ease;
 			}
-			&:hover {
+
+			/*&:hover {
 				transform: translateX(0);
 
 				& i {
 					opacity: 1;
 				}
-				& .fas {
+			}*/
+		}
+		&:hover {
+			& .moov {
+				transform: translateX(0);
+				& i {
+					opacity: 1;
 					transform: rotate(0deg);
 				}
 			}
 		}
+
 		@for $n from 1 through 3 {
 			&--#{$n} {
 				animation-delay: 600ms * $n;

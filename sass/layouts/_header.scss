@@ -4,9 +4,11 @@
 	align-items: center;
 	margin: 10px 10px;
 	&__icon {
-		align-self: left;
+		margin-right: auto;
 	}
 	&__logo {
+		margin-right: auto;
+		margin-left: -30px;
 		width: 300px;
 		height: 60px;
 		& img {
