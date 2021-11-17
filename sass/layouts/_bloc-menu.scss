@@ -54,15 +54,19 @@
 					white-space: nowrap;
 				}
 			}
+			&__icon {
+				background-color: $color-ter;
+				opacity: 0;
+			}
 			& i {
 				color: white;
 				width: 80px;
 				padding: 12px;
-				background-color: $color-ter;
+
 				text-align: center;
 				border-top-right-radius: 15px;
 				border-bottom-right-radius: 15px;
-				opacity: 0;
+
 				transform: rotate(-180deg);
 				transition: all 500ms ease;
 			}
@@ -78,8 +82,10 @@
 		&:hover {
 			& .moov {
 				transform: translateX(0);
-				& i {
+				&__icon {
 					opacity: 1;
+				}
+				& i {
 					transform: rotate(0deg);
 				}
 			}

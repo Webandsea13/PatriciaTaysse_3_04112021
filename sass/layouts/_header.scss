@@ -2,15 +2,20 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 10px 10px;
+	padding: 10px 10px;
 	&__icon {
 		margin-right: auto;
+		&--none {
+			display: none;
+		}
 	}
 	&__logo {
-		margin-right: auto;
-		margin-left: -30px;
 		width: 300px;
 		height: 60px;
+		&--place {
+			margin-right: auto;
+			margin-left: -30px;
+		}
 		& img {
 			height: 100%;
 			width: 100%;
