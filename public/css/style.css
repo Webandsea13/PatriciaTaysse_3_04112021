@@ -126,13 +126,6 @@
   display: flex;
   transform: translateX(80px);
   transition: all 500ms ease;
-  /*&:hover {
-  	transform: translateX(0);
-
-  	& i {
-  		opacity: 1;
-  	}
-  }*/
 }
 .menu__list__item .moov__price {
   padding: 15px 15px;
