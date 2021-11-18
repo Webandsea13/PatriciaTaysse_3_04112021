@@ -1,13 +1,16 @@
 .page-menu {
+	width: 100%;
 	@include desktop {
 		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
 	}
 }
 .menu {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
 	flex: 1;
 	justify-content: center;
 	background-color: $bkg-clear-grey;
@@ -19,13 +22,13 @@
 	&__list {
 	}
 	&__list__item {
+		cursor: pointer;
 		background-color: white;
-		/*width: 90%;*/
 		padding: 0;
 		margin: 20px 20px;
 		border-radius: 15px;
 		display: flex;
-		justify-content: space-between;
+		/*justify-content: space-between;*/
 		overflow: hidden;
 		animation: appear 1800ms backwards;
 
@@ -34,6 +37,7 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			width: 100%;
 			& h2,
 			& p {
 				white-space: nowrap;
@@ -41,26 +45,20 @@
 				text-overflow: ellipsis;
 			}
 		}
-		& .moov {
+		& .price {
 			display: flex;
-
-			transform: translateX(80px);
+			font-weight: bold;
+			padding: 15px 15px;
+			align-items: flex-end;
+			white-space: nowrap;
+		}
+		& .check {
+			background-color: $color-ter;
+			opacity: 0;
+			width: 0px;
 			transition: all 500ms ease;
-			&__price {
-				padding: 15px 15px;
-				display: flex;
-				align-items: flex-end;
-				& p {
-					white-space: nowrap;
-				}
-			}
-			&__icon {
-				background-color: $color-ter;
-				opacity: 0;
-			}
 			& i {
 				color: white;
-				width: 80px;
 				padding: 12px;
 
 				text-align: center;
@@ -71,12 +69,12 @@
 				transition: all 500ms ease;
 			}
 		}
+
 		&:hover {
-			& .moov {
-				transform: translateX(0);
-				&__icon {
-					opacity: 1;
-				}
+			& .check {
+				opacity: 1;
+				width: 80px;
+
 				& i {
 					transform: rotate(0deg);
 				}
