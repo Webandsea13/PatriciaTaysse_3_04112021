@@ -25,4 +25,7 @@
 			width: 22px;
 		}
 	}
+	@include desktop {
+		align-items: center;
+	}
 }

@@ -20,9 +20,12 @@
 	}
 
 	&:hover {
+		/*& .heart {
+			opacity: 0;
+		}*/
 		& .heart--pink {
 			opacity: 1;
-			transform: scale(1.05);
+			transform: scale(1.03);
 		}
 	}
 }

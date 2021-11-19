@@ -8,6 +8,7 @@
 	box-shadow: 5px 5px 5px $bkg-dark-grey;
 	position: relative;
 	z-index: 1;
+	transition: box-shadow 0.4s ease;
 
 	&::after {
 		content: "";
@@ -19,7 +20,7 @@
 			lighten($color-prim, 7%),
 			lighten($color-sec, 7%)
 		);
-		/*background-color: $color-sec;*/
+
 		border-radius: 20px;
 		transition: opacity 400ms;
 		top: 0;
