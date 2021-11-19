@@ -24,8 +24,7 @@
 		width: 50px;
 		margin-left: 20px;
 	}
-	&__list {
-	}
+
 	&__list__item {
 		cursor: pointer;
 		background-color: white;
@@ -35,7 +34,7 @@
 		display: flex;
 		/*justify-content: space-between;*/
 		overflow: hidden;
-		animation: appear 1800ms backwards;
+		animation: appear 1200ms backwards;
 
 		& .text {
 			padding: 15px 0;
@@ -86,9 +85,9 @@
 			}
 		}
 
-		@for $n from 1 through 3 {
+		@for $n from 1 through 4 {
 			&--#{$n} {
-				animation-delay: 600ms * $n;
+				animation-delay: 300ms * $n;
 			}
 		}
 	}
