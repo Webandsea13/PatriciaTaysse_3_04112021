@@ -11,8 +11,20 @@
   display: none;
 }
 .header__logo {
-  width: 300px;
-  height: 60px;
+  width: 200px;
+  height: 40px;
+}
+@media screen and (min-width: 699px) and (max-width: 999px) {
+  .header__logo {
+    width: 350px;
+    height: 80px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .header__logo {
+    width: 350px;
+    height: 80px;
+  }
 }
 .header__logo--place {
   margin-right: auto;
@@ -51,15 +63,27 @@
 .footer li i {
   width: 22px;
 }
+.footer li:hover {
+  color: #ff79da;
+}
+.footer li:hover a {
+  color: #ff79da;
+}
 @media screen and (min-width: 1000px) {
   .footer {
-    align-items: center;
+    /*align-items: center;*/
+  }
+  .footer ul {
+    display: flex;
+  }
+  .footer ul li {
+    padding: 40px;
   }
 }
 
 .page-header {
   width: 100%;
-  height: 430px;
+  height: 350px;
   background-color: #f2f2f2;
 }
 .page-header img {
@@ -77,6 +101,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 25px 0;
+  padding-left: 5px;
   position: absolute;
   top: 350px;
   width: 100%;
@@ -86,20 +111,23 @@
 .page-menu {
   width: 100%;
   background-color: #f2f2f2;
-  padding-bottom: 20px;
+  padding-top: 100px;
+}
+@media screen and (min-width: 699px) and (max-width: 999px) {
+  .page-menu {
+    padding-top: 20px;
+  }
 }
 @media screen and (min-width: 1000px) {
   .page-menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 20px;
   }
 }
 
 .menu {
-  /*width: 100%;
-  display: flex;
-  flex-direction: column;*/
   flex: 1;
   justify-content: center;
   background-color: #f2f2f2;
@@ -112,21 +140,22 @@
 .menu__title {
   border-bottom: 3px solid #99e2d0;
   width: 50px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .menu__list__item {
   cursor: pointer;
   background-color: white;
   padding: 0;
-  margin: 30px 30px;
+  margin: 25px 25px;
   border-radius: 15px;
   display: flex;
-  /*justify-content: space-between;*/
   overflow: hidden;
   animation: appear 1200ms backwards;
+  box-shadow: 10px 10px 10px #d3d3d3;
 }
 .menu__list__item .text {
   padding: 15px 0;
+  padding-left: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -211,12 +240,12 @@ h4,
 p {
   margin-bottom: 0;
   margin-top: 0;
-  padding-left: 15px;
 }
 
 a {
   text-decoration: none;
   color: black;
+  display: block;
 }
 
 @media screen and (min-width: 1000px) {
@@ -265,12 +294,13 @@ a {
 }
 
 .fonctionnement {
-  margin: 30px 0;
+  margin: 30px 30px;
 }
 @media screen and (min-width: 699px) and (max-width: 999px) {
   .fonctionnement__list {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 .fonctionnement__bulle {
@@ -278,7 +308,7 @@ a {
   height: 60px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px #d3d3d3;
-  margin: 30px 20px;
+  margin: 30px 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
@@ -290,6 +320,9 @@ a {
 .fonctionnement__bulle i {
   padding-left: 30px;
   color: grey;
+}
+.fonctionnement__bulle h4 {
+  padding-left: 15px;
 }
 .fonctionnement__bulle:hover {
   background-color: #e4d5f6;
@@ -322,7 +355,6 @@ a {
 
 .restaurant {
   background-color: #f2f2f2;
-  /*width: 100%;*/
   padding: 30px 30px;
 }
 .restaurant__list {
@@ -370,39 +402,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px;
-  /*
-  & .anim {
-  	margin-right: 15px;
-  	position: relative;
-  	& .heart {
-  		position: absolute;
-  		top: 0;
-  		bottom: 0;
-  		left: 0;
-  		right: 0;
-  	}
-  	& .heart--pink {
-  		background: -webkit-linear-gradient(
-  			$color-prim,
-  			$color-sec
-  		);
-  		-webkit-background-clip: text;
-  		-webkit-text-fill-color: transparent;
-  		z-index: -1;
-  		opacity: 0;
-  		transform: scale(0.1);
-  		transition: all 400ms ease;
-  		transform-origin: 50% 100%;
-  	}
-
-  	&:hover {
-  		& .heart--pink {
-  			opacity: 1;
-  			transform: scale(1.03);
-  		}
-  	}
-  }*/
+  padding-top: 15px;
+  margin-left: 15px;
 }
 .restaurant img {
   width: 100%;
@@ -465,12 +466,19 @@ a {
   color: white;
   animation: out 500ms 3s linear forwards;
 }
-.loading h1 {
+.loading__content {
   position: relative;
-  left: 135px;
-  animation: flash 3s linear;
+  width: 200px;
+  height: 200px;
 }
-.loading span {
+.loading h1 {
+  position: absolute;
+  animation: flash 3s linear;
+  width: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+.loading__spinner {
   width: 200px;
   height: 200px;
   border-radius: 50%;

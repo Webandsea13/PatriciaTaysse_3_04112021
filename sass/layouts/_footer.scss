@@ -21,11 +21,24 @@
 		display: flex;
 		line-height: 200%;
 		align-items: center;
+
 		& i {
 			width: 22px;
 		}
+		&:hover {
+			color: $color-sec;
+			& a {
+				color: $color-sec;
+			}
+		}
 	}
 	@include desktop {
-		align-items: center;
+		/*align-items: center;*/
+		& ul {
+			display: flex;
+			& li {
+				padding: 40px;
+			}
+		}
 	}
 }

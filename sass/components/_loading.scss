@@ -11,13 +11,21 @@
 	font-family: "shrikhand";
 	color: white;
 	animation: out 500ms 3s linear forwards;
-	& h1 {
+	&__content {
 		position: relative;
-		left: 135px;
-		animation: flash 3s linear;
+		width: 200px;
+		height: 200px;
 	}
 
-	& span {
+	& h1 {
+		position: absolute;
+		animation: flash 3s linear;
+		width: 200px;
+		text-align: center;
+		line-height: 200px;
+	}
+
+	&__spinner {
 		width: 200px;
 		height: 200px;
 		border-radius: 50%;

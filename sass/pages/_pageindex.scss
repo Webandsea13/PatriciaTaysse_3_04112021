@@ -5,11 +5,11 @@ h4,
 p {
 	margin-bottom: 0;
 	margin-top: 0;
-	padding-left: 15px;
 }
 a {
 	text-decoration: none;
 	color: black;
+	display: block;
 }
 
 .main-index {
@@ -54,11 +54,13 @@ a {
 	}
 }
 .fonctionnement {
-	margin: 30px 0;
+	margin: 30px 30px;
+
 	&__list {
 		@include tablette {
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
 		}
 	}
 	&__bulle {
@@ -66,7 +68,7 @@ a {
 		height: 60px;
 		border-radius: 20px;
 		box-shadow: 10px 10px 10px $bkg-dark-grey;
-		margin: 30px 20px;
+		margin: 30px 0px;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		align-items: center;
@@ -77,6 +79,9 @@ a {
 		& i {
 			padding-left: 30px;
 			color: grey;
+		}
+		& h4 {
+			padding-left: 15px;
 		}
 		&:hover {
 			background-color: lighten($color: $color-prim, $amount: 30);
@@ -108,7 +113,6 @@ a {
 
 .restaurant {
 	background-color: $bkg-clear-grey;
-	/*width: 100%;*/
 	padding: 30px 30px;
 
 	&__list {
@@ -130,6 +134,7 @@ a {
 		position: relative;
 		box-shadow: 10px 10px 10px $bkg-dark-grey;
 		transition: transform 0.5s ease;
+
 		& span {
 			position: absolute;
 			color: green;
@@ -152,39 +157,8 @@ a {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding-top: 5px;
-			/*
-			& .anim {
-				margin-right: 15px;
-				position: relative;
-				& .heart {
-					position: absolute;
-					top: 0;
-					bottom: 0;
-					left: 0;
-					right: 0;
-				}
-				& .heart--pink {
-					background: -webkit-linear-gradient(
-						$color-prim,
-						$color-sec
-					);
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-					z-index: -1;
-					opacity: 0;
-					transform: scale(0.1);
-					transition: all 400ms ease;
-					transform-origin: 50% 100%;
-				}
-
-				&:hover {
-					& .heart--pink {
-						opacity: 1;
-						transform: scale(1.03);
-					}
-				}
-			}*/
+			padding-top: 15px;
+			margin-left: 15px;
 		}
 	}
 
