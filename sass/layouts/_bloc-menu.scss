@@ -1,7 +1,8 @@
 .page-menu {
 	width: 100%;
 	background-color: $bkg-clear-grey;
-	padding-top: 100px;
+	padding-top: 60px;
+	padding-bottom: 15px;
 	@include tablette {
 		padding-top: 20px;
 	}

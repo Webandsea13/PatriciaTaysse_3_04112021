@@ -13,12 +13,12 @@
 		width: 200px;
 		height: 40px;
 		@include tablette {
-			width: 350px;
-			height: 80px;
+			width: 300px;
+			height: 55px;
 		}
 		@include desktop {
-			width: 350px;
-			height: 80px;
+			width: 300px;
+			height: 55px;
 		}
 
 		&--place {

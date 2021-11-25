@@ -39,6 +39,9 @@ a {
 	& input {
 		border-style: none;
 		background-color: $bkg-dark-grey;
+		font-family: "roboto";
+		font-weight: bold;
+		color: black;
 	}
 	& i {
 		width: 30px;

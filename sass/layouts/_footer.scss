@@ -21,13 +21,18 @@
 		display: flex;
 		line-height: 200%;
 		align-items: center;
+		& .items {
+			display: flex;
+			align-items: center;
+		}
 
 		& i {
 			width: 22px;
 		}
-		&:hover {
+
+		& a:hover {
 			color: $color-sec;
-			& a {
+			& i {
 				color: $color-sec;
 			}
 		}
@@ -38,6 +43,9 @@
 			display: flex;
 			& li {
 				padding: 40px;
+				&:first-child {
+					padding-left: 0px;
+				}
 			}
 		}
 	}
